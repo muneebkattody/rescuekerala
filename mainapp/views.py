@@ -86,6 +86,13 @@ class RegisterVolunteer(CreateView):
     fields = ['name', 'district', 'phone', 'organisation', 'area', 'address']
     success_url = '/reg_success/'
 
+ # renew volunteer class   
+class RenewVolunteer(CreateView):
+    model = Volunteer
+    fields = ['district', 'name', 'local_body', 'phone', 'email', 'date_time', 'has_consented']
+    success_url = '/reg_success/'
+
+    
 def volunteerdata(request):
     filter = VolunteerFilter( request.GET, queryset=Volunteer.objects.all() )
     req_data = filter.qs.order_by('-id')
