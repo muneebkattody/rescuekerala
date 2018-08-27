@@ -49,7 +49,7 @@ if __name__ == "__main__":
 				timestamp = calendar.timegm(timestamp.utctimetuple())
 
 				# Preparing unique URL
-				url = 'http://keralarescue.in/renew_volunteer.html'
+				url = 'http://keralarescue.in/c/' + sendID + "/" + str(timestamp)[-4:]
 				message = "If you would like to volunteer to do the damage assessment, please click this link " + url
 							
 				payload = { 'username':'xxxxxxxx','password':'xxxxxxxx','message':message,'numbers':mobile}
